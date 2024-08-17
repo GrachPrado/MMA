@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/GrachPrado/MMA.git/static/css/main.386ab11d.css",
+    "main.js": "/GrachPrado/MMA.git/static/js/main.4476930e.js",
+    "index.html": "/GrachPrado/MMA.git/index.html",
+    "main.386ab11d.css.map": "/GrachPrado/MMA.git/static/css/main.386ab11d.css.map",
+    "main.4476930e.js.map": "/GrachPrado/MMA.git/static/js/main.4476930e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.386ab11d.css",
+    "static/js/main.4476930e.js"
+  ]
+}
