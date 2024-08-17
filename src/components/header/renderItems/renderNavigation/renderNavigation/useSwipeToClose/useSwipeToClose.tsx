@@ -15,7 +15,7 @@ const useSwipeToClose = (ref: React.RefObject<HTMLElement>, callback: () => void
     };
 
     const handleSwipeGesture = () => {
-      if (touchStartX - touchEndX > 70) {
+      if (touchStartX - touchEndX > 100) {
         callback();
       }
     };
