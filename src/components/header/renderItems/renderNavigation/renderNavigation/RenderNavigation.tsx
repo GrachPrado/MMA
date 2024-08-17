@@ -2,8 +2,8 @@ import React, { FC, useRef } from 'react';
 import './renderNavigation.scss';
 import { NavItem, Props } from './type';
 import useCurrentLocation from './useCurrentLocation/useCurrentLocation';
-// import useOutsideClick from './useOutsideClick/useOutsideClick';
-import useSwipeToClose from './useSwipeToClose/useSwipeToClose';
+import useOutsideClick from './useOutsideClick/useOutsideClick';
+import useSwipeToClose from './useSwipeToClose/useSwipeToClose'; // Import the new hook
 import { useScreenWidth } from './MartialArtsDropdown/useScreenWidth/useScreenWidth'
 import ToggleDropdown from './MartialArtsDropdown/toggleDropdown/ToggleDropdown';
 
@@ -24,8 +24,8 @@ const RenderNavigation: FC<Props> = ({ isOpen, setIsOpen }) => {
   const currentPath = useCurrentLocation();
   const navRef = useRef<HTMLElement>(null);
   
-  // useOutsideClick(navRef, () => setIsOpen(false));
-  useSwipeToClose(navRef, () => setIsOpen(false));
+  useOutsideClick(navRef, () => setIsOpen(false));
+  useSwipeToClose(navRef, () => setIsOpen(false)); // Use the swipe-to-close hook
 
   const screenWidth = useScreenWidth();
   const isSmallScreen = screenWidth <= 1536; // redo to 1024, this is for convenience 

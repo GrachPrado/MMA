@@ -1,35 +1,38 @@
-import { useState, useEffect, RefObject } from 'react';
+import { useEffect } from 'react';
 
-const useSwipeToClose = (ref: RefObject<HTMLElement>, onClose: () => void) => {
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-
+const useSwipeToClose = (ref: React.RefObject<HTMLElement>, callback: () => void) => {
   useEffect(() => {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
     const handleTouchStart = (e: TouchEvent) => {
-      setTouchStartX(e.touches[0].clientX);
+      touchStartX = e.changedTouches[0].screenX;
     };
 
-    const handleTouchMove = (e: TouchEvent) => {
-      if (touchStartX !== null) {
-        const touchEndX = e.touches[0].clientX;
-        if (touchStartX - touchEndX > 50) { // detect left swipe
-          onClose();
-        }
+    const handleTouchEnd = (e: TouchEvent) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipeGesture();
+    };
+
+    const handleSwipeGesture = () => {
+      if (touchStartX - touchEndX > 70) {
+        callback();
       }
     };
 
-    const element = ref.current;
-    if (element) {
-      element.addEventListener('touchstart', handleTouchStart, { passive: true });
-      element.addEventListener('touchmove', handleTouchMove, { passive: true });
+    const node = ref.current;
+    if (node) {
+      node.addEventListener('touchstart', handleTouchStart,{ passive: true });
+      node.addEventListener('touchend', handleTouchEnd,{ passive: true });
     }
 
     return () => {
-      if (element) {
-        element.removeEventListener('touchstart', handleTouchStart);
-        element.removeEventListener('touchmove', handleTouchMove);
+      if (node) {
+        node.removeEventListener('touchstart', handleTouchStart,);
+        node.removeEventListener('touchend', handleTouchEnd);
       }
     };
-  }, [touchStartX, onClose, ref]);
+  }, [ref, callback]);
 };
 
 export default useSwipeToClose;
