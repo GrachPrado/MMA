@@ -7,7 +7,7 @@ const ToggleDropdown = () => {
     setIsDropDownOpened(prevState => !prevState);
   };
 
-  return { isDropDownOpened, toggleDropdown };
+  return { isDropDownOpened, toggleDropdown, setIsDropDownOpened };
 };
 
 export default ToggleDropdown;

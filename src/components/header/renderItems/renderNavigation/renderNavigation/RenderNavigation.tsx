@@ -2,7 +2,7 @@ import React, { FC, useRef} from 'react';
 import './renderNavigation.scss';
 import { NavItem, Props } from './type';
 import useCurrentLocation from './useCurrentLocation/useCurrentLocation';
-import useOutsideClick from './useOutsideClick/useOutsideClick';
+import useOutsideClick from './useOutsideClick/useOutsideClick'; // 1
 import useSwipeToClose from './useSwipeToClose/useSwipeToClose'; // Import the new hook
 import { useScreenWidth } from './MartialArtsDropdown/useScreenWidth/useScreenWidth'
 import ToggleDropdown from './MartialArtsDropdown/toggleDropdown/ToggleDropdown';
@@ -23,14 +23,18 @@ export const navItems: NavItem[] = [
 const RenderNavigation: FC<Props> = ({ isOpen, setIsOpen }) => {
   const currentPath = useCurrentLocation();
   const navRef = useRef<HTMLElement>(null);
+  const dropdownRef = useRef<HTMLUListElement>(null);
   
-  useOutsideClick(navRef, () => setIsOpen(false));
-  useSwipeToClose(navRef, () => setIsOpen(false)); // Use the swipe-to-close hook
+  useOutsideClick(dropdownRef, () => setIsDropDownOpened(false)); // Use the click-to-close hook (dropdown)
+
+  useOutsideClick(navRef, () => setIsOpen(false)); // Use the click-to-close hook (burger menu)
+
+  useSwipeToClose(navRef, () => setIsOpen(false)); // Use the swipe-to-close hook (burger menu)
 
   const screenWidth = useScreenWidth();
   const isSmallScreen = screenWidth <= 1024; // redo to 1024, this is for convenience 
 
-  const { isDropDownOpened, toggleDropdown } = ToggleDropdown(); // Use the ToggleDropdown component
+  const { isDropDownOpened, toggleDropdown, setIsDropDownOpened } = ToggleDropdown(); // Use the ToggleDropdown component
   // Function to check if any dropdown item is active
   const isDropdownItemActive = navItems.slice(4, 8).some(item => currentPath === item.to);
 
@@ -59,7 +63,7 @@ const RenderNavigation: FC<Props> = ({ isOpen, setIsOpen }) => {
                 Martial Arts
               </a>
               {isDropDownOpened && ( // Conditionally render the dropdown menu
-                <ul className="dropdown__menu" aria-label="Martial Arts Dropdown">
+                <ul ref={dropdownRef} className="dropdown__menu" aria-label="Martial Arts Dropdown">
                   {screenWidth === 768 ? renderNavItems(navItems.slice(2, 8)) : renderNavItems(navItems.slice(4, 8))}
                 </ul>
               )}

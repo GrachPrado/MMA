@@ -3,11 +3,11 @@ import "./renderRegisterButton.scss";
 
 function RenderRegisterButton() {
   return (
-   <>
+   <div>
    <button >
    записатись
    </button>
-   </>
+   </div>
   );
 }
 
