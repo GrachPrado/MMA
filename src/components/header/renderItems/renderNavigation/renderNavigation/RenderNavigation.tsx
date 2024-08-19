@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react';
+import React, { FC, useRef} from 'react';
 import './renderNavigation.scss';
 import { NavItem, Props } from './type';
 import useCurrentLocation from './useCurrentLocation/useCurrentLocation';
@@ -28,9 +28,11 @@ const RenderNavigation: FC<Props> = ({ isOpen, setIsOpen }) => {
   useSwipeToClose(navRef, () => setIsOpen(false)); // Use the swipe-to-close hook
 
   const screenWidth = useScreenWidth();
-  const isSmallScreen = screenWidth <= 1536; // redo to 1024, this is for convenience 
+  const isSmallScreen = screenWidth <= 1024; // redo to 1024, this is for convenience 
 
   const { isDropDownOpened, toggleDropdown } = ToggleDropdown(); // Use the ToggleDropdown component
+  // Function to check if any dropdown item is active
+  const isDropdownItemActive = navItems.slice(4, 8).some(item => currentPath === item.to);
 
   const renderNavItems = (items: NavItem[]) => (
     items.map((item) => (
@@ -51,14 +53,14 @@ const RenderNavigation: FC<Props> = ({ isOpen, setIsOpen }) => {
       <ul>
         {isSmallScreen ? (
           <>
-            {renderNavItems(navItems.slice(0, 4))}
+            {screenWidth === 768 ? renderNavItems(navItems.slice(0,2)) : renderNavItems(navItems.slice(0, 4))}
             <li className="dropdown">
-              <a href="#!" className="dropdown-toggle" role="button" aria-expanded="false"  onClick={toggleDropdown}>
+              <a href="#!" className={`dropdown-toggle ${isDropdownItemActive ? 'color' : ''}`} role="button" aria-expanded="false"  onClick={toggleDropdown}>
                 Martial Arts
               </a>
               {isDropDownOpened && ( // Conditionally render the dropdown menu
                 <ul className="dropdown__menu" aria-label="Martial Arts Dropdown">
-                  {renderNavItems(navItems.slice(4, 8))}
+                  {screenWidth === 768 ? renderNavItems(navItems.slice(2, 8)) : renderNavItems(navItems.slice(4, 8))}
                 </ul>
               )}
             </li>
