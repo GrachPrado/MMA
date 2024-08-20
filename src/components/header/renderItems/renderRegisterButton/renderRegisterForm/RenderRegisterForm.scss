@@ -1,0 +1,32 @@
+.registerForm {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    height: 480px;
+    border: 2px solid red;
+    z-index: 100;
+    background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+    .registerForm {
+        width: 70%; /* A bit larger on tablets */
+        height: 70%; 
+    }
+}
+
+@media (min-width: 1024px) {
+    .registerForm {
+        width: 50%; /* Even larger on small desktops */
+        height: 60%;
+    }
+}
+
+@media (min-width: 1366px) {
+    .registerForm {
+        width: 469px; /* Full size at 1366px */
+        height: 525px; /* Full height at 1366px */
+    }
+}
