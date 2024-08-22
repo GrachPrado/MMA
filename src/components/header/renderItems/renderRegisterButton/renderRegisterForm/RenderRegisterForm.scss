@@ -3,14 +3,13 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 340px;
+    width: 380px;
     height: 452px;
-    border: 2px solid red;
     z-index: 100;
     background-color: #ffffff;
   
     &__container {
-      margin: 17px 12px;
+      margin: 44px 30px;
     }
   
     &__inputFields {
@@ -23,28 +22,17 @@
   @media (min-width: 768px) {
     .registerForm {
       width: 469px;
-      height: 485px;
+      height: 490px;
       &__container {
-        margin: 30px 20px;
-      }
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .registerForm {
-      height: 493px;
-      &__container {
-        margin: 45px 30px;
+        margin: 56px 40px;
       }
     }
   }
   
   @media (min-width: 1366px) {
     .registerForm {
-      height: 525px; /* Full height at 1366px */
-      &__container {
-        margin: 56px 40px;
-      }
+      width: 469px;
+      height: 525px;
     }
   }
   
