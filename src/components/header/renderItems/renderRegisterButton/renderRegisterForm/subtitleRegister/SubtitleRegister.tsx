@@ -2,8 +2,8 @@ import React from 'react';
 import './subtitle.scss';
 
 const SubtitleRegister: React.FC = () => (
-  <p className="register-subtitle">
-    Оставьте заявку и мы с вами свяжемся
+  <p className="registerForm__container-subtitle ">
+    Залиште заявку і ми зв'яжемося з вами
   </p>
 );
 

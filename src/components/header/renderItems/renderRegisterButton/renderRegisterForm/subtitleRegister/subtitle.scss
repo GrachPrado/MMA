@@ -1,5 +1,16 @@
-.register-subtitle {
-    margin-top: 10px;
-    color: #777;
+.registerForm__container-subtitle {
+    color: #828282;
+    font-family: "Rubik";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-bottom: 50px;
   }
   
+  @media (min-width: 768px) {
+    .registerForm__container-subtitle  {
+        font-size: 18px;
+    }
+}

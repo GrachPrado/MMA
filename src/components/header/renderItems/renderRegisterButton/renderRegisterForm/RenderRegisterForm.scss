@@ -4,29 +4,47 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 340px;
-    height: 480px;
+    height: 452px;
     border: 2px solid red;
     z-index: 100;
     background-color: #ffffff;
-}
-
-@media (min-width: 768px) {
-    .registerForm {
-        width: 70%; /* A bit larger on tablets */
-        height: 70%; 
+  
+    &__container {
+      margin: 17px 12px;
     }
-}
-
-@media (min-width: 1024px) {
-    .registerForm {
-        width: 50%; /* Even larger on small desktops */
-        height: 60%;
+  
+    &__inputFields {
+      fieldset:not(:last-child) {
+        margin-bottom: 28px;
+      }
     }
-}
-
-@media (min-width: 1366px) {
+  }
+  
+  @media (min-width: 768px) {
     .registerForm {
-        width: 469px; /* Full size at 1366px */
-        height: 525px; /* Full height at 1366px */
+      width: 469px;
+      height: 485px;
+      &__container {
+        margin: 30px 20px;
+      }
     }
-}
+  }
+  
+  @media (min-width: 1024px) {
+    .registerForm {
+      height: 493px;
+      &__container {
+        margin: 45px 30px;
+      }
+    }
+  }
+  
+  @media (min-width: 1366px) {
+    .registerForm {
+      height: 525px; /* Full height at 1366px */
+      &__container {
+        margin: 56px 40px;
+      }
+    }
+  }
+  

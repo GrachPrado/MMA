@@ -2,8 +2,8 @@ import React from 'react';
 import './heading.scss';
 
 const HeadingRegister: React.FC = () => (
-  <h1 className="register-heading">
-    Записаться на <span className="highlight">тренировку</span>
+  <h1 className="registerForm__container-heading">
+    Записатись на <span className="highlight">тренування</span>
   </h1>
 );
 
