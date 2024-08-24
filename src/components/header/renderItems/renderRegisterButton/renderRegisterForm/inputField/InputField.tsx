@@ -1,12 +1,8 @@
 import React from "react";
 import "./inputField.scss";
+import { InputFieldProps } from "./inputFieldTypes";
+import useChangeBorderOnFocus from "./useChangeBorderOnFocus/useChangeBorderOnFocus";
 
-interface InputFieldProps {
-  label: string; // Label for the input field
-  name: string; // Name attribute for the input field
-  type?: string; // Type of input (e.g., text, email, etc.), default to "text"
-  placeholder?: string; // Placeholder text for the input field
-}
 
 const InputField: React.FC<InputFieldProps> = ({
   label,
@@ -14,13 +10,18 @@ const InputField: React.FC<InputFieldProps> = ({
   type = "text",
   placeholder,
 }) => {
+    const { inputValue, handleChange, inputClass } = useChangeBorderOnFocus();
+
   return (
-    <fieldset className="registerForm__container-input">
+    <fieldset className={`${inputClass} registerForm__container-input`}>
       <legend>{label}</legend>
       <input
         type={type}
         name={name}
+        value={inputValue}  
+        onChange={handleChange}
         placeholder={placeholder}
+        className={inputClass}
         required
       />
     </fieldset>

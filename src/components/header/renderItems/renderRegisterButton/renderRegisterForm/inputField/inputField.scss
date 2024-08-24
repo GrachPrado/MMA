@@ -1,7 +1,7 @@
 .registerForm__inputFields{
     .registerForm__container-input{
         border-radius: 8px;
-        border: 1px solid #000;
+        border: 1px solid #ff0000;
         opacity: 0.2;
         legend{
             color: #000;
@@ -24,6 +24,9 @@
                 outline: none;
             }
         }
+    }
+    .input-onFocused{
+        opacity: 1;
     }
 
 }
