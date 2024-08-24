@@ -4,6 +4,7 @@ import HeadingRegister from './headingRegister/HeadingRegister';
 import SubtitleRegister from './subtitleRegister/SubtitleRegister';
 import InputField from './inputField/InputField';
 import SubmitButton from './submitButton.tsx/SubmitButton';
+import { useValidateNameInput } from './inputField/useValidateNameInput/useValidateNameInput';
 
 // Use forwardRef to pass down the ref
 const RenderRegisterForm = forwardRef<HTMLDivElement, {}>((props, ref) => {
@@ -18,6 +19,7 @@ const RenderRegisterForm = forwardRef<HTMLDivElement, {}>((props, ref) => {
             name="name"
             type="text"
             placeholder="Введіть ваше ім'я"
+            validateNameInput={useValidateNameInput}
           />
           <InputField
             label="Телефон:"

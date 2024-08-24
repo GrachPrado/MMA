@@ -9,23 +9,31 @@ const InputField: React.FC<InputFieldProps> = ({
   name,
   type = "text",
   placeholder,
+  validateNameInput,
 }) => {
     const { inputValue, handleChange, inputClass } = useChangeBorderOnFocus();
 
-  return (
-    <fieldset className={`${inputClass} registerForm__container-input`}>
-      <legend>{label}</legend>
-      <input
-        type={type}
-        name={name}
-        value={inputValue}  
-        onChange={handleChange}
-        placeholder={placeholder}
-        className={inputClass}
-        required
-      />
-    </fieldset>
-  );
-};
-
-export default React.memo(InputField);
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { value: newValue } = event.target;
+      if (validateNameInput && (validateNameInput(newValue) || newValue === "")) {
+        handleChange(event);
+      }
+    };
+  
+    return (
+      <fieldset className={`${inputClass} registerForm__container-input`}>
+        <legend>{label}</legend>
+        <input
+          type={type}
+          name={name}
+          value={inputValue}
+          onChange={handleInputChange} // Use the custom change handler
+          placeholder={placeholder}
+          className={inputClass}
+          required
+        />
+      </fieldset>
+    );
+  };
+  
+  export default React.memo(InputField);
