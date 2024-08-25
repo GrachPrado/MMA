@@ -1,0 +1,25 @@
+.submit-button {
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    color: #000;
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+  
+      margin-top: 72px;
+      width: 100%;
+      background-color: #E0E0E0;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;  
+      .icon {
+        margin-right: 16px;
+       
+      }
+    }
+    
