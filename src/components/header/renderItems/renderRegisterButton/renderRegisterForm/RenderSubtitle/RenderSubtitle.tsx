@@ -1,10 +1,10 @@
 import React from 'react';
-import './subtitle.scss';
+import './renderSubtitle.scss';
 
-const SubtitleRegister: React.FC = () => (
+const RenderSubtitle: React.FC = () => (
   <p className="registerForm__container-subtitle ">
     Залиште заявку і ми зв'яжемося з вами
   </p>
 );
 
-export default SubtitleRegister
+export default RenderSubtitle

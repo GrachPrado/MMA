@@ -1,7 +1,7 @@
 import React from 'react';
-import './SubmitButton.scss';
+import './renderSubmitButton.scss';
 
-const SubmitButton: React.FC = () => (
+const RenderSubmitButton: React.FC = () => (
   <button className="submit-button">
     <span className="icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="26" viewBox="0 0 30 26" fill="none">
@@ -12,4 +12,4 @@ const SubmitButton: React.FC = () => (
   </button>
 );
 
-export default SubmitButton;
+export default RenderSubmitButton;

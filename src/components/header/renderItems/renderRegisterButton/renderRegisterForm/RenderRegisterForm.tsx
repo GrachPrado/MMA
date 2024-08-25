@@ -1,40 +1,34 @@
-import React, { forwardRef } from 'react';
-import "./RenderRegisterForm.scss";
-import HeadingRegister from './headingRegister/HeadingRegister';
-import SubtitleRegister from './subtitleRegister/SubtitleRegister';
-import InputField from './inputField/InputField';
-import SubmitButton from './submitButton.tsx/SubmitButton';
-import { useValidateNameInput } from './inputField/useValidateNameInput/useValidateNameInput';
-import { validatePhoneInput } from './inputField/validatePhoneInput/validatePhoneInput';
+import React from 'react';
+import RenderFormHeader from './RenderFormHeader/RenderFormHeader';
+import RenderSubtitle from './RenderSubtitle/RenderSubtitle';
+import RenderInput from './RenderInput/RenderInput';
+import RenderSubmitButton from './RenderSubmitButton/RenderSubmitButton';
+import "./renderRegisterForm.scss";
 
-// Use forwardRef to pass down the ref
-const RenderRegisterForm = forwardRef<HTMLDivElement, {}>((props, ref) => {
-  const validateNameInput = useValidateNameInput(); // Call the name validation hook
+const RenderRegisterForm: React.FC = () => {
   return (
-    <div className='registerForm' ref={ref}>
+    <div className='registerForm'>
       <div className='registerForm__container'>
-        <HeadingRegister />
-        <SubtitleRegister />
+        <RenderFormHeader />
+        <RenderSubtitle />
         <div className='registerForm__inputFields'>
-          <InputField
+        <RenderInput
             label="Ваше ім'я:"
             name="name"
             type="text"
             placeholder="Введіть ваше ім'я"
-            validateNameInput={validateNameInput} // Pass name validation function
           />
-          <InputField
+          <RenderInput
             label="Телефон:"
             name="telephone"
             type="tel"
             placeholder="+380"
-            validatePhoneInput={validatePhoneInput} // Pass the phone validation function
           />
-        </div>
-        <SubmitButton />
+          </div>
+        <RenderSubmitButton />
       </div>
     </div>
   );
-});
+}
 
 export default RenderRegisterForm;

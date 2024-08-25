@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 const useToggleRegister = () => {
-  const [isRegisterOpened, setIsRegisterOpened] = useState<boolean>(false);
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
-  const toggleRegister = (): void => {
-    setIsRegisterOpened(prevState => !prevState);
+  const toggleForm = () => {
+    setIsFormVisible(prevState => !prevState);
   };
 
-  return { isRegisterOpened, toggleRegister, setIsRegisterOpened };
+  return { isFormVisible, toggleForm };
 };
 
 export default useToggleRegister;
