@@ -1,8 +1,8 @@
 import React from 'react';
-import RenderFormHeader from './RenderFormHeader/RenderFormHeader';
-import RenderSubtitle from './RenderSubtitle/RenderSubtitle';
-import RenderInput from './RenderInput/RenderInput';
-import RenderSubmitButton from './RenderSubmitButton/RenderSubmitButton';
+import RenderFormHeader from './Render/RenderFormHeader/RenderFormHeader';
+import RenderSubtitle from './Render/RenderSubtitle/RenderSubtitle';
+import RenderInput from './Render/RenderInput/RenderInput';
+import RenderSubmitButton from './Render/RenderSubmitButton/RenderSubmitButton';
 import "./renderRegisterForm.scss";
 
 const RenderRegisterForm: React.FC = () => {

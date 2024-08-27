@@ -16,7 +16,10 @@
       background-color: #E0E0E0;
       border: none;
       border-radius: 30px;
-      cursor: pointer;  
+      cursor: pointer;
+      &.valid {
+        background-color: red; // Change to red when valid
+    }
       .icon {
         margin-right: 16px;
        
