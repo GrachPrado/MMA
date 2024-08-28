@@ -17,12 +17,11 @@
       border: none;
       border-radius: 30px;
       cursor: pointer;
-      &.valid {
-        background-color: red; // Change to red when valid
+      &__valid {
+        background-color: #FFD540; 
     }
       .icon {
         margin-right: 16px;
-       
       }
     }
     

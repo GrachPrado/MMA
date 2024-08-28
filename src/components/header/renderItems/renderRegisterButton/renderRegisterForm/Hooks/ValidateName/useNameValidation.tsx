@@ -18,7 +18,11 @@ const useNameValidation = () => {
     setName(cleanedValue);
 
     // Validate the cleaned value
-    setIsValid(namePattern.test(cleanedValue));
+    if (cleanedValue.trim() === '') {
+      setIsValid(false); // Consider empty input as invalid
+    } else {
+      setIsValid(namePattern.test(cleanedValue));
+    }
   };
 
   return {

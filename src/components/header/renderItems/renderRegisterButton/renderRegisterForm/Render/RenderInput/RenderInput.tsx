@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import usePhoneValidation from '../../Hooks/validatePhone/usePhoneValidation';
 import useNameValidation from '../../Hooks/ValidateName/useNameValidation';
 import { RenderInputProps } from './RenderInputTypes';
 import "./renderInput.scss";
-const RenderInput: React.FC<RenderInputProps> = ({ label, name, type, placeholder }) => {
+const RenderInput: React.FC<RenderInputProps & { setIsValid: (isValid: boolean) => void }> = ({ label, name, type, placeholder, setIsValid }) => {
   const { phone, isValid: isPhoneValid, handlePhoneChange } = usePhoneValidation();
   const { name: nameValue, isValid: isNameValid, handleNameChange } = useNameValidation();
 
@@ -15,9 +15,18 @@ const RenderInput: React.FC<RenderInputProps> = ({ label, name, type, placeholde
     }
   };
 
+  useEffect(() => {
+    if (name === 'telephone') {
+      setIsValid(isPhoneValid);
+    } else if (name === 'name') {
+      setIsValid(isNameValid);
+    }
+  }, [isPhoneValid, isNameValid, name, setIsValid]);
+
+
   return (
-    <fieldset className="registerForm__container-input">
-      <legend>{label}</legend>
+<fieldset className={`registerForm__container-input ${nameValue || phone ? 'has-value' : ''}`}>
+<legend>{label}</legend>
       <input
         name={name}
         type={type}

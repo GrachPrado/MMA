@@ -8,6 +8,10 @@ const usePhoneValidation = () => {
     // Remove any non-digit characters except "+" at the start
     const cleanedValue = value.replace(/\D/g, '');
 
+    if (cleanedValue.length > 12) {
+      return; // Do nothing if the phone number already has 12 valid digits
+    }
+
     // Ensure the phone number starts with +38 and follow the format +38(xxx)-xxx-xx-xx
     let formattedValue = '+380';
     if (cleanedValue.length > 3) {

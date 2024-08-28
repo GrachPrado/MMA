@@ -1,8 +1,11 @@
 import React from 'react';
 import './renderSubmitButton.scss';
 
-const RenderSubmitButton: React.FC = () => (
-  <button className="submit-button">
+const RenderSubmitButton: React.FC<{ isFormValid: boolean }> = ({ isFormValid }) => (
+  <button
+  className={`submit-button ${isFormValid ? 'submit-button__valid' : ''}`}
+  disabled={!isFormValid}
+  >
     <span className="icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="26" viewBox="0 0 30 26" fill="none">
   <path
