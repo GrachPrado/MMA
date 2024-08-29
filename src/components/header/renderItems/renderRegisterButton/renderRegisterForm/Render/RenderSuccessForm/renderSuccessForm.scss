@@ -1,0 +1,25 @@
+.registerSuccessForm {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 452px;
+    z-index: 100;
+    background-color: #ffffff;
+  
+    &__container {
+      margin: 44px 30px;
+    }
+  }
+
+  
+  @media (min-width: 768px) {
+    .registerForm {
+      width: 469px;
+      height: 490px;
+      &__container {
+        margin: 56px 40px;
+      }
+    }
+  }
