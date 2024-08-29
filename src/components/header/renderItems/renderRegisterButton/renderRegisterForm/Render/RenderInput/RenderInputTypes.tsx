@@ -1,7 +1,10 @@
+// RenderInputTypes.ts
 export interface RenderInputProps {
   label: string;
   name: string;
-  type?: string;
+  type: string;
   placeholder: string;
-  // onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void; // Add onChange prop
+  value: string; // Define the type as string
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // Correctly type the onChange event
+  setIsValid: (isValid: boolean) => void; // Already correctly typed
 }

@@ -1,9 +1,14 @@
 import React from 'react';
 import './renderFormHeader.scss';
 
-const RenderFormHeader: React.FC = () => (
+interface RenderFormHeaderProps {
+  title: string,
+  subtitle: string
+}
+
+const RenderFormHeader: React.FC<RenderFormHeaderProps> = ({title, subtitle}) => (
   <h1 className="registerForm__container-heading">
-    Записатись на <span className="highlight">тренування</span>
+    {title} <span className="highlight">{subtitle}</span>
   </h1>
 );
 

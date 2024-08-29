@@ -3,11 +3,12 @@ import usePhoneValidation from '../../Hooks/validatePhone/usePhoneValidation';
 import useNameValidation from '../../Hooks/ValidateName/useNameValidation';
 import { RenderInputProps } from './RenderInputTypes';
 import "./renderInput.scss";
-const RenderInput: React.FC<RenderInputProps & { setIsValid: (isValid: boolean) => void }> = ({ label, name, type, placeholder, setIsValid }) => {
+const RenderInput: React.FC<RenderInputProps & { setIsValid: (isValid: boolean) => void }> = ({ label, name, type, placeholder,value, onChange, setIsValid }) => {
   const { phone, isValid: isPhoneValid, handlePhoneChange } = usePhoneValidation();
   const { name: nameValue, isValid: isNameValid, handleNameChange } = useNameValidation();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(e); // Pass the event up to the parent component to handle state
     if (name === 'telephone') {
       handlePhoneChange(e.target.value);
     } else if (name === 'name') {
