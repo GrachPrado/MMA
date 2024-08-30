@@ -4,6 +4,7 @@ import RenderSubtitle from './Render/RenderSubtitle/RenderSubtitle';
 import RenderInput from './Render/RenderInput/RenderInput';
 import RenderSubmitButton from './Render/RenderSubmitButton/RenderSubmitButton';
 import { TelegramFormHandler } from './Hooks/TelegramFormHandler/TelegramFormHandler';
+import RenderSuccessForm from './Render/RenderSuccessForm/RenderSuccessForm';
 import "./renderRegisterForm.scss";
 
 const RenderRegisterForm: React.FC = () => {
@@ -14,6 +15,8 @@ const RenderRegisterForm: React.FC = () => {
   // State to track the values of name and phone
   const [phone, setPhone] = useState('');
   const [name, setName] = useState('');
+  // State to track if the form is submitted successfully
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Handle input change with explicit event typing
   const handleInputChange = (
@@ -30,6 +33,7 @@ const RenderRegisterForm: React.FC = () => {
         await TelegramFormHandler({ name, phone });
         console.log('Form submitted successfully');
         alert("zhopa")
+        setIsSubmitted(true); // Set form as submitted
         // Optionally clear the form or show success feedback
       } catch (error) {
         console.error('Error submitting form:', error);
@@ -39,6 +43,11 @@ const RenderRegisterForm: React.FC = () => {
       console.log('Form is not valid');
     }
   };
+
+  if (isSubmitted) {
+    return <RenderSuccessForm closeForm={() => setIsSubmitted(false)} />; // Pass closeForm as a prop
+  }
+  
 
   return (
     <div className='registerForm'>
@@ -70,7 +79,7 @@ const RenderRegisterForm: React.FC = () => {
             setIsValid={setIsPhoneValid}
           />
         </div>
-        <RenderSubmitButton submitButtonTitle="zhopa"  onClick={onSubmit} isFormValid={isNameValid && isPhoneValid} />
+        <RenderSubmitButton submitButtonTitle="відправити заявку"  onClick={onSubmit} isFormValid={isNameValid && isPhoneValid} />
 
       </div>
     </div>

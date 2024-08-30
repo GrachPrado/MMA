@@ -2,11 +2,12 @@ import React from 'react';
 import './renderSubtitle.scss';
 
 interface RenderSubtitleProps {
-  subtitleText: string
+  subtitleText: string,
+  className?: string,
 }
 
-const RenderSubtitle: React.FC<RenderSubtitleProps> = ({subtitleText}) => (
-  <p className="registerForm__container-subtitle ">
+const RenderSubtitle: React.FC<RenderSubtitleProps> = ({subtitleText,className="registerForm__container-subtitle"}) => (
+  <p className={className}>
     {subtitleText}
   </p>
 );

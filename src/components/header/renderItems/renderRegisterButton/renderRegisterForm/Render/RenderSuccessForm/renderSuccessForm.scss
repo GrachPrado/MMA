@@ -9,7 +9,61 @@
     background-color: #ffffff;
   
     &__container {
-      margin: 44px 30px;
+      margin: 22px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      &-svg{
+        width: 193px;
+        height: 193px;
+      }
+      &-title{
+        text-align: center;
+        color: #333;
+        font-family: "Montserrat";
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        width: 100%;
+        margin: 16px 0 24px;
+        .highlight {
+            font-weight: 400;
+        }
+      }
+      &-Subtitle{
+        color: #828282;
+        font-family: "Rubik";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: left;
+        margin:0 0 41px 0;
+      }
+      &-submit{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      color: #000;
+      font-family: "Montserrat";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: uppercase;
+      margin-top: 0;
+      width: 100%;
+      background-color: #FFD540;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      .icon{
+        display: none;
+      }
+      }
     }
   }
 
