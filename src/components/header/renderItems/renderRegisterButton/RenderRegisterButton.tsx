@@ -4,7 +4,7 @@ import useToggleRegister from './useToggleRegister/useToggleRegister';
 import RenderRegisterForm from './RenderRegisterForm/RenderRegisterForm';
 
 const RenderRegisterButton: React.FC = () => {
-  const { isFormVisible, toggleForm } = useToggleRegister();
+  const { isFormVisible, toggleForm, setIsFormVisible } = useToggleRegister();
 
   return (
     <>
@@ -14,7 +14,7 @@ const RenderRegisterButton: React.FC = () => {
         </button>
       </div>
       {isFormVisible && (
-        <RenderRegisterForm />
+        <RenderRegisterForm setIsFormVisible={setIsFormVisible} />
       )}
     </>
   );

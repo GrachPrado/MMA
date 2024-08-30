@@ -7,7 +7,7 @@ const useToggleRegister = () => {
     setIsFormVisible(prevState => !prevState);
   };
 
-  return { isFormVisible, toggleForm };
+  return { isFormVisible, toggleForm, setIsFormVisible };
 };
 
 export default useToggleRegister;
