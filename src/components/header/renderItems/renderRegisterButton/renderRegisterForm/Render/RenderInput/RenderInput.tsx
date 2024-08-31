@@ -24,6 +24,9 @@ const RenderInput: React.FC<RenderInputProps & { setIsValid: (isValid: boolean) 
     }
   }, [isPhoneValid, isNameValid, name, setIsValid]);
 
+  // Determine if the error should be displayed
+  const shouldShowError = (name === 'telephone' && !isPhoneValid && phone) || 
+                          (name === 'name' && !isNameValid && nameValue);
 
   return (
 <fieldset className={`registerForm__container-input ${nameValue || phone ? 'has-value' : ''}`}>
@@ -35,11 +38,10 @@ const RenderInput: React.FC<RenderInputProps & { setIsValid: (isValid: boolean) 
         value={name === 'telephone' ? phone : name === 'name' ? nameValue : undefined}
         onChange={handleChange}
       />
-      {name === 'telephone' && !isPhoneValid && (
-        <div className="error">Invalid phone number</div>
-      )}
-      {name === 'name' && !isNameValid && (
-        <div className="error">Invalid name (only letters, max 20 characters)</div>
+       {shouldShowError && (
+        <div className="error">
+          {name === 'telephone' ? 'Invalid phone number' : 'Invalid name (only letters, max 20 characters)'}
+        </div>
       )}
     </fieldset>
   );

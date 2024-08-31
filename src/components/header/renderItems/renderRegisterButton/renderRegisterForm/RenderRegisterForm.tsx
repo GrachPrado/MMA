@@ -30,7 +30,7 @@ const RenderRegisterForm: React.FC<RenderRegisterFormProps> = ({ setIsFormVisibl
   };
 
   const onSubmit = async () => {
-    if (isNameValid && isPhoneValid) {
+    if (isNameValid && isPhoneValid && name.trim() !== '' && phone.trim() !== '') {
       try {
         await TelegramFormHandler({ name, phone });
         console.log('Form submitted successfully');
@@ -72,7 +72,7 @@ const RenderRegisterForm: React.FC<RenderRegisterFormProps> = ({ setIsFormVisibl
                 name="telephone"
                 type="tel"
                 placeholder="+380"
-                value={phone}
+                value={"+380" + phone}
                 onChange={(e) => handleInputChange(e, setPhone)}
                 setIsValid={setIsPhoneValid}
               />
@@ -80,7 +80,7 @@ const RenderRegisterForm: React.FC<RenderRegisterFormProps> = ({ setIsFormVisibl
             <RenderSubmitButton 
               submitButtonTitle="відправити заявку" 
               onClick={onSubmit} 
-              isFormValid={isNameValid && isPhoneValid} 
+              isFormValid={isNameValid && isPhoneValid && name.trim() !== '' && phone.trim() !== ''} 
             />
           </>
         )}

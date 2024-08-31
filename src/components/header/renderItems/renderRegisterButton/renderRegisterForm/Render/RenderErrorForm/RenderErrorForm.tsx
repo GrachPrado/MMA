@@ -1,18 +1,16 @@
+// it's just done, not implemented
 import React from "react";
 import RenderFormHeader from "../RenderFormHeader/RenderFormHeader";
 import RenderSubtitle from "../RenderSubtitle/RenderSubtitle";
 import RenderSubmitButton from "../RenderSubmitButton/RenderSubmitButton";
-import "./renderSuccessForm.scss";
+import "./renderErrorForm.scss";
 
-interface RenderSuccessFormProps {
-  closeForm?: () => void; // Add the closeForm prop
-}
 
-const RenderSuccessForm: React.FC<RenderSuccessFormProps> = ({ closeForm }) => {
+const RenderErrorForm: React.FC = () => {
   return (
-    <div className="registerSuccessForm">
-      <div className="registerSuccessForm__container">
-        <div className="registerSuccessForm__container-svg">
+    <div className="registerErrorForm">
+      <div className="registerErrorForm__container">
+        <div className="registerErrorForm__container-svg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 193 193"
@@ -25,19 +23,19 @@ const RenderSuccessForm: React.FC<RenderSuccessFormProps> = ({ closeForm }) => {
             />
           </svg>
         </div>
-        <RenderFormHeader title="Заявка успішно" subtitle="відправлена" className="registerSuccessForm__container-title" />
+        <RenderFormHeader title="Заявка неуспішна" subtitle="не відправлена" className="registerErrorForm__container-title" />
         <RenderSubtitle
           subtitleText="ми зв'яжемося з вами"
-          className="registerSuccessForm__container-Subtitle"
+          className="registerErrorForm__container-Subtitle"
         />
         <RenderSubmitButton 
-          onClick={closeForm} // Call the closeForm function when clicked
-          submitButtonTitle="дякую" 
-          className="registerSuccessForm__container-submit" 
+            // Call the closeForm function when clicked
+          submitButtonTitle="повернутись" 
+          className="registerErrorForm__container-submit" 
         />
       </div>
     </div>
   );
 };
 
-export default RenderSuccessForm;
+export default RenderErrorForm;
