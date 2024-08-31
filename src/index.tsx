@@ -10,3 +10,9 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// git add .
+// git commit -m "Description of changes"
+// npm run build
+// npm run deploy
+// git push origin main
