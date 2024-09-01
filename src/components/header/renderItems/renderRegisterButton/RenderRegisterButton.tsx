@@ -3,13 +3,17 @@ import "./renderRegisterButton.scss";
 import useToggleRegister from './useToggleRegister/useToggleRegister';
 import RenderRegisterForm from './RenderRegisterForm/RenderRegisterForm';
 
-const RenderRegisterButton: React.FC = () => {
+interface RenderRegisterButtonProps {
+  className?: string,
+}
+
+const RenderRegisterButton: React.FC<RenderRegisterButtonProps> = ({className="registerButton"}) => {
   const { isFormVisible, toggleForm, setIsFormVisible } = useToggleRegister();
 
   return (
     <>
       <div>
-        <button className='registerButton' onClick={toggleForm}>
+        <button className={className} onClick={toggleForm}>
           записатись
         </button>
       </div>

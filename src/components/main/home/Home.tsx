@@ -2,6 +2,7 @@ import React from 'react';
 import "./home.scss";
 import SVGBackground from './svgBackground/SVGBackground';
 import HomeTitle from './homeTitle/HomeTitle';
+import HomeRegister from './homeRegister/HomeRegister';
 
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
    <SVGBackground />
    <div className='homeSection__container'>
    <HomeTitle />
+   <HomeRegister />
    </div>
 </section>
    </main>
