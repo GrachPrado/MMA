@@ -9,6 +9,9 @@ function Home() {
     <main style={{color:"blue"}}>
    <section className='homeSection'>
    <SVGBackground />
+   <div className='homeSection__container'>
+   <HomeTitle />
+   </div>
 </section>
    </main>
   );
