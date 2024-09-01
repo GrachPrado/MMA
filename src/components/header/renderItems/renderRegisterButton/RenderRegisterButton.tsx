@@ -8,8 +8,8 @@ const RenderRegisterButton: React.FC = () => {
 
   return (
     <>
-      <div style={{color:"red", position:"relative"}}>
-        <button onClick={toggleForm}>
+      <div>
+        <button className='registerButton' onClick={toggleForm}>
           записатись
         </button>
       </div>

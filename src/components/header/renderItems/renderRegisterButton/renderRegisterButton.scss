@@ -1,5 +1,5 @@
-button{
-    width: 187px;
+.registerButton{
+width: 187px;
 height: 56px;
 flex-shrink: 0;
 border-radius: 50px;
@@ -18,7 +18,7 @@ display: none; // temporary
 }
 
 @media only screen and (min-width:425px) {
-    button{
+    .registerButton{
         display: block;
     }
 }

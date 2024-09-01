@@ -46,7 +46,20 @@ nav {
       }
       .dropdown {
         .dropdown-toggle {
-          border-bottom: 2px solid #ffd540;
+          color: #fff;
+          font-family: "Montserrat";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          text-transform: uppercase;
+          border: none;
+          background-color: transparent;
+          padding: 0;
+          span{
+            border-bottom: 2px solid #ffd540;
+            padding-bottom: 2.5px;
+          }
           &.color {
             color: #ffd540;
           }

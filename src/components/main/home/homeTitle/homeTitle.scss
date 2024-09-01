@@ -1,0 +1,42 @@
+.homeSection_container-title{
+    position: absolute;
+    top: 10%;
+    z-index: 2;
+    
+    h1{
+        color: #FFF;
+    font-family: "Montserrat";
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    span{
+        font-weight: 400;
+    }
+    }
+    p{
+        color: #BABABA;
+        font-family: "Rubik";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .homeSection_container-title{
+        margin: 0 25px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .homeSection_container-title{
+        border: 2px solid red;
+    }
+}
