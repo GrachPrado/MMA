@@ -9,14 +9,14 @@
     background-color: #ffffff;
   
     &__container {
-      margin: 22px 30px;
+      margin: 44px 30px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
       &-svg{
-        width: 193px;
-        height: 193px;
+        width: 160px;
+        height: 160px;
       }
       &-title{
         text-align: center;
@@ -73,7 +73,34 @@
       width: 469px;
       height: 490px;
       &__container {
-        margin: 56px 40px;
+        margin: 57px 40px;
+        &-svg{
+          width: 189px;
+          height: 189px;
+        }
+        &-title{
+          font-size: 24px;
+        }
+        &-Subtitle{
+          font-size: 16px;
       }
+    }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .registerSuccessForm {
+      &__container {
+        &-svg{
+          width: 149px;
+          height: 149px;
+        }
+        &-title{
+          font-size: 28px;
+        }
+        &-Subtitle{
+          font-size: 18px;
+      }
+    }
     }
   }

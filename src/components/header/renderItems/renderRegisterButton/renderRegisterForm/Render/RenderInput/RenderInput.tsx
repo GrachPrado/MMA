@@ -8,7 +8,7 @@ const RenderInput: React.FC<RenderInputProps & { setIsValid: (isValid: boolean) 
   const { name: nameValue, isValid: isNameValid, handleNameChange } = useNameValidation();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(e); // Pass the event up to the parent component to handle state
+    onChange(e);
     if (name === 'telephone') {
       handlePhoneChange(e.target.value);
     } else if (name === 'name') {
@@ -24,10 +24,6 @@ const RenderInput: React.FC<RenderInputProps & { setIsValid: (isValid: boolean) 
     }
   }, [isPhoneValid, isNameValid, name, setIsValid]);
 
-  // Determine if the error should be displayed
-  const shouldShowError = (name === 'telephone' && !isPhoneValid && phone) || 
-                          (name === 'name' && !isNameValid && nameValue);
-
   return (
 <fieldset className={`registerForm__container-input ${nameValue || phone ? 'has-value' : ''}`}>
 <legend>{label}</legend>
@@ -37,12 +33,8 @@ const RenderInput: React.FC<RenderInputProps & { setIsValid: (isValid: boolean) 
         placeholder={placeholder}
         value={name === 'telephone' ? phone : name === 'name' ? nameValue : undefined}
         onChange={handleChange}
+        autoComplete={name === 'telephone' ? 'tel' : 'name'} 
       />
-       {shouldShowError && (
-        <div className="error">
-          {name === 'telephone' ? 'Invalid phone number' : 'Invalid name (only letters, max 20 characters)'}
-        </div>
-      )}
     </fieldset>
   );
 };

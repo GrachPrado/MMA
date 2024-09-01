@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import RenderFormHeader from './Render/RenderFormHeader/RenderFormHeader';
 import RenderSubtitle from './Render/RenderSubtitle/RenderSubtitle';
 import RenderInput from './Render/RenderInput/RenderInput';
@@ -6,6 +6,7 @@ import RenderSubmitButton from './Render/RenderSubmitButton/RenderSubmitButton';
 import { TelegramFormHandler } from './Hooks/TelegramFormHandler/TelegramFormHandler';
 import RenderSuccessForm from './Render/RenderSuccessForm/RenderSuccessForm';
 import useOutsideClick from '../../renderNavigation/renderNavigation/useOutsideClick/useOutsideClick';
+import RenderErrorForm from './Render/RenderErrorForm/RenderErrorForm';
 import "./renderRegisterForm.scss";
 
 interface RenderRegisterFormProps {
@@ -21,6 +22,7 @@ const RenderRegisterForm: React.FC<RenderRegisterFormProps> = ({ setIsFormVisibl
   const [phone, setPhone] = useState('');
   const [name, setName] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [hasError, setHasError] = useState(false); // New state for error handling
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -35,19 +37,33 @@ const RenderRegisterForm: React.FC<RenderRegisterFormProps> = ({ setIsFormVisibl
         await TelegramFormHandler({ name, phone });
         console.log('Form submitted successfully');
         setIsSubmitted(true); // Set form as submitted
+        setHasError(false); // Reset error state
       } catch (error) {
         console.error('Error submitting form:', error);
+        setHasError(true); // Set error state
       }
     } else {
-      console.log('Form is not valid');
+      setHasError(true); // Set error state if validation fails
     }
   };
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (hasError) {
+      timer = setTimeout(() => {
+        setHasError(false); // Reset error state after 4 seconds
+      }, 400000);
+    }
+    return () => clearTimeout(timer); // Cleanup timeout if component unmounts
+  }, [hasError]);
 
   return (
     <div className='registerForm' ref={registerFormRef}>
       <div className='registerForm__container'>
         {isSubmitted ? (
           <RenderSuccessForm closeForm={() => setIsFormVisible(false)} />
+        ) : hasError ? ( // Conditionally render the error form
+          <RenderErrorForm onClick={() => setHasError(false)} />
         ) : (
           <>
             <RenderFormHeader
@@ -72,7 +88,7 @@ const RenderRegisterForm: React.FC<RenderRegisterFormProps> = ({ setIsFormVisibl
                 name="telephone"
                 type="tel"
                 placeholder="+380"
-                value={"+380" + phone}
+                value={phone}
                 onChange={(e) => handleInputChange(e, setPhone)}
                 setIsValid={setIsPhoneValid}
               />
