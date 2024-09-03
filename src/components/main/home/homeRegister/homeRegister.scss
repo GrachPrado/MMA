@@ -1,3 +1,18 @@
-.homeSection__container-register button{
-    display: block;
+.homeSection__container-register{
+    .homeSection__container-button{
+        width: 187px;
+        height: 56px;
+        flex-shrink: 0;
+        border-radius: 50px;
+        border: 2px solid #FFD540;
+        background-color: transparent;
+        cursor: pointer;
+        color: #FFD540;
+        font-family: "Montserrat";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+    }
 }

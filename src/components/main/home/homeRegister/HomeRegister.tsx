@@ -5,7 +5,7 @@ import RenderRegisterButton from '../../../header/renderItems/renderRegisterButt
 function HomeRegister() {
   return (
    <div className='homeSection__container-register'>
-    <RenderRegisterButton />
+    <RenderRegisterButton className='homeSection__container-button'/>
    </div>
 
   );
