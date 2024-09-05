@@ -5,7 +5,8 @@ import RenderRegisterButton from '../../../header/renderItems/renderRegisterButt
 function HomeRegister() {
   return (
    <div className='homeSection__container-register'>
-    <RenderRegisterButton className='homeSection__container-button'/>
+    
+    <RenderRegisterButton className='homeSection__container-button' registerButtonTitle={"записатись на тренування"}/>
    </div>
 
   );

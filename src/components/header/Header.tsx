@@ -13,7 +13,7 @@ const Header: FC = () => {
     <header>
       <RenderLogo />
       <RenderNavigation isOpen={isOpen} setIsOpen={setIsOpen} />
-      <RenderRegisterButton />
+      <RenderRegisterButton registerButtonTitle="записатись" />
       <RenderBurgerMenu isOpen={isOpen} toggleMenu={toggleMenu} />
     </header>
   );

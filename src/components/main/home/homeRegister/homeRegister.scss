@@ -1,19 +1,34 @@
 .homeSection__container-register{
     margin-top: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: right;
+    svg{
+        position: absolute;
+        width: 31px;
+        height: 26px;
+    }
     .homeSection__container-button{
-        width: 187px;
-        height: 56px;
-        flex-shrink: 0;
+        width: 250px;
+        height: 64px;
         border-radius: 50px;
         border: 2px solid #FFD540;
-        background-color: transparent;
+        background-color: #FFD540;
         cursor: pointer;
-        color: #FFD540;
+        color: #000000;
         font-family: "Montserrat";
-        font-size: 14px;
+        font-size: 12px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
         text-transform: uppercase;
+    }
+}
+
+@media only screen and (min-width:425px) {
+    .homeSection__container-button{
+        width: 250px;
     }
 }
