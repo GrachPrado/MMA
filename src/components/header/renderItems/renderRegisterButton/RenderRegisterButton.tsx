@@ -4,18 +4,21 @@ import useToggleRegister from './useToggleRegister/useToggleRegister';
 import RenderRegisterForm from './RenderRegisterForm/RenderRegisterForm';
 
 interface RenderRegisterButtonProps {
+  divClassName?: string,
   className?: string,
   registerButtonTitle: string,
+  icon?: React.ReactNode
 }
 
-const RenderRegisterButton: React.FC<RenderRegisterButtonProps> = ({className="registerButton", registerButtonTitle="записатись"}) => {
+const RenderRegisterButton: React.FC<RenderRegisterButtonProps> = ({divClassName,className="registerButton", registerButtonTitle="записатись", icon}) => {
   const { isFormVisible, toggleForm, setIsFormVisible } = useToggleRegister();
 
   return (
     <>
-      <div>
+      <div className={divClassName}>
         <button className={className} onClick={toggleForm}>
-          {registerButtonTitle}
+        {icon && <span className="icon-container">{icon}</span>}
+        <span>{registerButtonTitle}</span>
         </button>
       </div>
       {isFormVisible && (

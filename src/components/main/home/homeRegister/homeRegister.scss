@@ -1,16 +1,7 @@
 .homeSection__container-register{
     margin-top: 50px;
     position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: right;
-    svg{
-        position: absolute;
-        width: 31px;
-        height: 26px;
-    }
-    .homeSection__container-button{
+    .homeSection__container-button {
         width: 250px;
         height: 64px;
         border-radius: 50px;
@@ -24,11 +15,22 @@
         font-weight: 600;
         line-height: normal;
         text-transform: uppercase;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .icon-container{
+            margin-right: 16px;
+        }
     }
 }
 
 @media only screen and (min-width:425px) {
+    .homeSection__container-register{
+        justify-content: flex-start;
+
     .homeSection__container-button{
-        width: 250px;
+        width: 360px;
+    }
     }
 }
