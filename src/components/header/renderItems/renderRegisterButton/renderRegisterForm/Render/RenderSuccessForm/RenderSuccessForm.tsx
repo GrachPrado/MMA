@@ -6,11 +6,12 @@ import "./renderSuccessForm.scss";
 
 interface RenderSuccessFormProps {
   closeForm?: () => void; // Add the closeForm prop
+  successRef: React.Ref<HTMLDivElement>;
 }
 
-const RenderSuccessForm: React.FC<RenderSuccessFormProps> = ({ closeForm }) => {
+const RenderSuccessForm: React.FC<RenderSuccessFormProps> = ({ closeForm,successRef}) => {
   return (
-    <div className="registerSuccessForm">
+    <div className="registerSuccessForm" ref={successRef}>
       <div className="registerSuccessForm__container">
         <div className="registerSuccessForm__container-svg">
           <svg

@@ -1,106 +1,74 @@
 .registerSuccessForm {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 380px;
-    height: 452px;
-    z-index: 100;
-    background-color: #ffffff;
-  
-    &__container {
-      margin: 44px 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      &-svg{
-        width: 160px;
-        height: 160px;
-      }
-      &-title{
-        text-align: center;
-        color: #333;
-        font-family: "Montserrat";
-        font-size: 21px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: normal;
-        width: 100%;
-        margin: 16px 0 24px;
-        .highlight {
-            font-weight: 400;
-        }
-      }
-      &-Subtitle{
-        color: #828282;
-        font-family: "Rubik";
-        font-size: 14px;
-        font-style: normal;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 452px;
+  z-index: 100;
+  background-color: #ffffff;
+
+  &__container {
+    padding: 41px 10px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+     border: 2px solid red;
+
+     &-svg {
+      width: 150px;
+      height: 150px;
+    }
+    &-title {
+      text-align: center;
+      color: #333;
+      font-family: "Montserrat";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      width: 100%;
+      margin: 23px 0 0;
+      .highlight {
         font-weight: 400;
-        line-height: normal;
-        text-align: left;
-        margin:0 0 41px 0;
       }
-      &-submit{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
+    }
+    &-Subtitle {
+      color: #828282;
+      font-family: "Rubik";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-align: left;
+      margin: 18px 0 0 ;
+    }
+    &-submit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       color: #000;
       font-family: "Montserrat";
-      font-size: 14px;
+      font-size: 12px;
       font-style: normal;
       font-weight: 600;
       line-height: normal;
       text-transform: uppercase;
       margin-top: 0;
       width: 100%;
-      background-color: #FFD540;
+      height: 52px;
+      background-color: #ffd540;
       border: none;
       border-radius: 30px;
+      margin-top: 72px;
       cursor: pointer;
-      .icon{
+      .icon {
         display: none;
       }
-      }
     }
   }
-
-  
-  @media (min-width: 768px) {
-    .registerSuccessForm {
-      width: 469px;
-      height: 490px;
-      &__container {
-        margin: 57px 40px;
-        &-svg{
-          width: 189px;
-          height: 189px;
-        }
-        &-title{
-          font-size: 24px;
-        }
-        &-Subtitle{
-          font-size: 16px;
-      }
-    }
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .registerSuccessForm {
-      &__container {
-        &-svg{
-          width: 149px;
-          height: 149px;
-        }
-        &-title{
-          font-size: 28px;
-        }
-        &-Subtitle{
-          font-size: 18px;
-      }
-    }
-    }
-  }
+}

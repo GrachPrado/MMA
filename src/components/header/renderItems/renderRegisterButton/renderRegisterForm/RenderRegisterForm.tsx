@@ -52,20 +52,20 @@ const RenderRegisterForm: React.FC<RenderRegisterFormProps> = ({ setIsFormVisibl
     if (hasError) {
       timer = setTimeout(() => {
         setHasError(false); // Reset error state after 4 seconds
-      }, 400000);
+      }, 400000000000);
     }
     return () => clearTimeout(timer); // Cleanup timeout if component unmounts
   }, [hasError]);
 
   return (
-    <div className='registerForm' ref={registerFormRef}>
-      <div className='registerForm__container'>
+    <>
         {isSubmitted ? (
-          <RenderSuccessForm closeForm={() => setIsFormVisible(false)} />
+          <RenderSuccessForm successRef={registerFormRef} closeForm={() => setIsFormVisible(false)} />
         ) : hasError ? ( // Conditionally render the error form
-          <RenderErrorForm onClick={() => setHasError(false)} />
+          <RenderErrorForm errorRef={registerFormRef} onClick={() => setHasError(false)} />
         ) : (
-          <>
+          <div className='registerForm' ref={registerFormRef}>
+      <div className='registerForm__container'>
             <RenderFormHeader
               title="Записатись на"
               subtitle='тренування'
@@ -97,11 +97,12 @@ const RenderRegisterForm: React.FC<RenderRegisterFormProps> = ({ setIsFormVisibl
               submitButtonTitle="відправити заявку" 
               onClick={onSubmit} 
               isFormValid={isNameValid && isPhoneValid && name.trim() !== '' && phone.trim() !== ''} 
+              className='registerForm__container-submit'
             />
-          </>
+            </div>
+            </div>
         )}
-      </div>
-    </div>
+        </>
   );
 }
 

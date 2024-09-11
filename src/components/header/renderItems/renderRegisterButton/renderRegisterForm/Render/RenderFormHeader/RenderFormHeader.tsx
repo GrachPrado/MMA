@@ -7,7 +7,7 @@ interface RenderFormHeaderProps {
   className?: string,
 }
 
-const RenderFormHeader: React.FC<RenderFormHeaderProps> = ({title, subtitle, className="registerForm__container-heading"}) => (
+const RenderFormHeader: React.FC<RenderFormHeaderProps> = ({title, subtitle, className="registerForm__container-title"}) => (
   <h1 className={className}>
     {title} <span className="highlight">{subtitle}</span>
   </h1>

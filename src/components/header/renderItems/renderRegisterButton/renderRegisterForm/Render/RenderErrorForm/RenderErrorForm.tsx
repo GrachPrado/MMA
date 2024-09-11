@@ -6,13 +6,14 @@ import RenderSubmitButton from "../RenderSubmitButton/RenderSubmitButton";
 import "./renderErrorForm.scss";
 
 interface RenderErrorFormProps {
-  onClick: () => void
+  onClick: () => void,
+  errorRef: React.Ref<HTMLDivElement>;
 }
 
 
-const RenderErrorForm: React.FC<RenderErrorFormProps> = ({onClick}) => {
+const RenderErrorForm: React.FC<RenderErrorFormProps> = ({onClick,errorRef}) => {
   return (
-    <div className="registerErrorForm">
+    <div className="registerErrorForm" ref={errorRef}>
       <div className="registerErrorForm__container">
         <div className="registerErrorForm__container-svg">
         <svg
@@ -33,7 +34,7 @@ const RenderErrorForm: React.FC<RenderErrorFormProps> = ({onClick}) => {
         <RenderFormHeader title="Заявка неуспішна" subtitle="не відправлена" className="registerErrorForm__container-title" />
         <RenderSubtitle
           subtitleText="форма заповнення англ. укр. мови та формат телефону +380 (XX)-XXX-XX-XX"
-          className="registerErrorForm__container-Subtitle"
+          className="registerErrorForm__container-subtitle"
         />
         <RenderSubmitButton 
             // Call the closeForm function when clicked

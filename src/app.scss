@@ -3,5 +3,10 @@ body{
     margin: 0;
     max-width: 74.125rem;
     margin: auto;
-    
+    box-sizing: border-box;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }   
 }
