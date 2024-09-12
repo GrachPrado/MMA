@@ -9,7 +9,7 @@ interface RenderButtonProps {
   validClassName?: string,
 }
 
-const RenderSubmitButton: React.FC<RenderButtonProps> = ({ submitButtonTitle, isFormValid, onClick,className="submit-button", validClassName="submit-button__valid" }) => (
+const RenderSubmitButton: React.FC<RenderButtonProps> = ({ submitButtonTitle, isFormValid, onClick,className="registerForm__container-submit", validClassName="valid" }) => (
   <button
   className={`${className} ${isFormValid ? validClassName : ''}`}
   // disabled={!isFormValid}

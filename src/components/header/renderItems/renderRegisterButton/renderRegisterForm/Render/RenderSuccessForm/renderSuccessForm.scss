@@ -16,11 +16,11 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-     border: 2px solid red;
+    // border: 2px solid red;
 
      &-svg {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 140px;
     }
     &-title {
       text-align: center;
@@ -72,3 +72,19 @@
     }
   }
 }
+
+// @media only screen and (min-width:375px) {
+//   .registerSuccessForm {
+//     width: 351.56px;
+//     height: 525px;
+//     &__container {
+//       padding: 56px 10px;
+//       &-title {
+//         font-size: 22px;
+//       }
+//       &-Subtitle {
+//         font-size: 15px;
+//       }
+//     }
+//   }
+// }
