@@ -4,8 +4,9 @@
         border-radius: 8px;
         border: 1px solid #000;
         opacity: 0.2;
+        height: 56px;
         &:not(:first-child){
-            margin-top: 32px;
+            margin-top: 35px;
         }
         &:not(:last-child){
             margin-top: 57px;
@@ -40,6 +41,17 @@
 @media only screen and (min-width:425px) {
     .registerForm__inputFields{
         .registerForm__container-input{
+            &:not(:first-child){
+                margin-top: 35px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .registerForm__inputFields{
+        .registerForm__container-input{
+            height: 56px;
             &:not(:first-child){
                 margin-top: 35px;
             }

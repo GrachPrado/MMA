@@ -16,22 +16,24 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-     border: 2px solid red;
+    //  border: 2px solid red;
 
-     &-svg {
-      width: 140px;
-      height: 140px;
+    &-svg {
+      svg{
+        width: 152px;
+        height: 152px;
+      }
     }
     &-title {
       text-align: center;
       color: #333;
       font-family: "Montserrat";
-      font-size: 18px;
+      font-size: 26px;
       font-style: normal;
       font-weight: 900;
       line-height: normal;
       width: 100%;
-      margin: 23px 0 0;
+      margin: 16px 0 0;
       .highlight {
         font-weight: 400;
       }
@@ -39,12 +41,12 @@
     &-Subtitle {
       color: #828282;
       font-family: "Rubik";
-      font-size: 12px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
       text-align: left;
-      margin: 18px 0 0 ;
+      margin: 24px 0 0 ;
     }
     &-submit {
       display: flex;
@@ -64,7 +66,7 @@
       background-color: #ffd540;
       border: none;
       border-radius: 30px;
-      margin-top: 72px;
+      margin-top: 41px;
       cursor: pointer;
       .icon {
         display: none;
@@ -78,37 +80,59 @@
     width: 351.56px;
     height: 484px;
     &__container {
-      padding: 56px 25px;
+      padding: 42px 40px 56px;
       &-svg {
-        width: 150px;
-        height: 150px;
+        svg{
+          width: 150px;
+          height: 150px;
+        }
       }
       &-title {
-        font-size: 20px;
+        font-size: 26px;
       }
       &-subtitle {
-        font-size: 14px;
+        font-size: 16px;
       }
       &-submit {
-        margin-top: 63px;
+        margin-top: 41px;
       }
     }
   }
 }
 
-@media only screen and (min-width:425px) {
-  .registerSuccessForm {
-    height: 456px;
-    &__container {
-      padding: 53px 25px;
-      &-svg {
-        width: 130px;
-        height: 130px;
-        margin-bottom: 15px;
-      }
-      &-submit {
-        margin-top: 46px;
-      }
-    }
-  }
-}
+// @media only screen and (min-width:425px) {
+//   .registerSuccessForm {
+//     height: 456px;
+//     &__container {
+//       padding: 53px 25px;
+//       &-svg {
+//         width: 130px;
+//         height: 130px;
+//         margin-bottom: 15px;
+//       }
+//       &-submit {
+//         margin-top: 46px;
+//       }
+//     }
+//   }
+// }
+
+// @media only screen and (min-width:768px) {
+//   .registerSuccessForm {
+//     width: 469px;
+//     height: 525px;
+//     &__container {
+//       padding: 56px 40px;
+//       &-title {
+//         font-size: 18px;
+//       }
+//       &-Subtitle {
+//         font-size: 18px;
+//        }
+//       &-submit {
+//         margin-top: 72px;
+//         height: 64px;
+//       }
+//     }
+//   }
+// }

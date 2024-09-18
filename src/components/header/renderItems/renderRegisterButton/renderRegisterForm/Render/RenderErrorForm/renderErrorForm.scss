@@ -16,23 +16,25 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-     border: 2px solid red;
+    //  border: 2px solid red;
 
     &-svg {
-      width: 140px;
-      height: 140px;
+      svg{
+        width: 140px;
+        height: 140px;
+      }
     }
 
     &-title {
       text-align: center;
       color: #333;
       font-family: "Montserrat";
-      font-size: 18px;
+      font-size: 26px;
       font-style: normal;
       font-weight: 900;
       line-height: normal;
       width: 100%;
-      margin: 23px 0 0;
+      margin: 16px 0 0;
       .highlight {
         display: none;
         font-weight: 400;
@@ -42,12 +44,12 @@
     &-subtitle {
       color: #828282;
       font-family: "Rubik";
-      font-size: 12px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
       text-align: center;
-      margin: 18px 0 0 ;
+      margin: 24px 0 0 ;
     }
 
     &-submit {
@@ -67,7 +69,7 @@
       background-color: #ffd540;
       border: none;
       border-radius: 30px;
-      margin-top: 72px;
+      margin-top: 41px;
       cursor: pointer;
 
       .icon {
@@ -82,38 +84,60 @@
     width: 351.56px;
     height: 484px;
     &__container {
-      padding: 56px 25px;
+      padding: 42px 40px 56px;
       &-svg {
-        width: 150px;
-        height: 150px;
+        svg{
+          width: 150px;
+          height: 150px;
+        }
       }
       &-title {
-        font-size: 20px;
+        font-size: 26px;
       }
       &-subtitle {
-        font-size: 14px;
+        font-size: 16px;
       }
       &-submit {
-        margin-top: 63px;
+        margin-top: 41px;
       }
     }
   }
 }
 
-@media only screen and (min-width:425px) {
-  .registerErrorForm {
-    height: 456px;
-    &__container {
-      padding: 53px 25px;
-      &-svg {
-        width: 130px;
-        height: 130px;
-        margin-bottom: 21px;
-      }
+// @media only screen and (min-width:425px) {
+//   .registerErrorForm {
+//     height: 456px;
+//     &__container {
+//       padding: 53px 25px;
+//       &-svg {
+//         width: 130px;
+//         height: 130px;
+//         margin-bottom: 21px;
+//       }
   
-      &-submit {
-        margin-top: 46px;
-      }
-    }
-  }
-}
+//       &-submit {
+//         margin-top: 46px;
+//       }
+//     }
+//   }
+// }
+
+// @media only screen and (min-width:768px) {
+//   .registerErrorForm {
+//     width: 469px;
+//     height: 525px;
+//     &__container {
+//       padding: 56px 40px;
+//       &-title {
+//         font-size: 18px;
+//       }
+//       &-subtitle {
+//         font-size: 18px;
+//        }
+//       &-submit {
+//         margin-top: 72px;
+//         height: 64px;
+//       }
+//     }
+//   }
+// }
